@@ -44,7 +44,6 @@ class PostController extends Controller
      */
     public function store(Request $request, Post $post)
     {
-        dd($request);
 
         $data = $request->validate([
             'title' => 'required',

@@ -7,8 +7,7 @@
         </div>
     </div>
     @if (session()->has('message'))
-        <div class="m-auto mt-10 w-4/5 pl-2" x-data="{show : true}" x-init="setTimeout(() => show = false, 4000)"
-            x-show="show">
+        <div class="m-auto mt-10 w-4/5 pl-2" x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)" x-show="show">
             <p class="mb-4 w-1/6 text-gray-50 bg-green-500 rounded-2xl py-4">{{ session()->get('message') }}</p>
         </div>
     @endif
@@ -22,8 +21,7 @@
     @foreach ($posts as $post)
         <div class="flex w-4/5 mx-auto py-15 border-b border-gray-200">
             <div>
-                <img src="https://cdn.pixabay.com/photo/2014/09/24/14/29/macbook-459196_960_720.jpg" alt="laptop-image"
-                    width="200px" height="200px">
+                <img src="{{ asset('images/' . $post->image) }}" alt="laptop-image" width="200px" height="200px">
             </div>
             <div class="ml-10">
                 <h2 class="text-gray-700 font-bold text-5xl pb-4">{{ $post->title }}</h2>
