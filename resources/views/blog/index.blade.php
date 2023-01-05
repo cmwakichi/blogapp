@@ -6,11 +6,7 @@
             <h1 class="text-6xl">Blog Posts</h1>
         </div>
     </div>
-    @if (session()->has('message'))
-        <div class="m-auto mt-10 w-4/5 pl-2" x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)" x-show="show">
-            <p class="mb-4 w-1/6 text-gray-50 bg-green-500 rounded-2xl py-4">{{ session()->get('message') }}</p>
-        </div>
-    @endif
+
     @if (Auth::check())
         <div class="pt-15 w-4/5 m-auto">
             <a href="/blog/create"

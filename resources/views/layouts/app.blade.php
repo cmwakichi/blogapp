@@ -50,7 +50,11 @@
                 </nav>
             </div>
         </header>
-
+        @if (session()->has('message'))
+            <div class="m-auto mt-10 w-4/5 pl-2" x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)" x-show="show">
+                <p class="mb-4 w-1/6 text-gray-50 bg-green-500 rounded-2xl py-4">{{ session()->get('message') }}</p>
+            </div>
+        @endif
         <div>
             @yield('content')
         </div>
